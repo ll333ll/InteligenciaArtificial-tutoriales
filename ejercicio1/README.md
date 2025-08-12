@@ -9,6 +9,10 @@ El problema consiste en encontrar la ruta más corta entre dos ciudades en un ma
 ## Aplicación de A*
 
 El algoritmo A* es una estrategia de búsqueda informada que combina las ventajas de la búsqueda de costo uniforme (priorizando el camino ya recorrido) y la búsqueda voraz (priorizando la cercanía estimada al objetivo). Lo hace evaluando los nodos con la siguiente función:
+En el código, la función heurística se define en el diccionario heuristica, donde cada ciudad tiene la distancia en línea recta a Bucarest.
+El valor g(n) se calcula sumando el costo de cada acción usando la función costo_accion.
+El valor h(n) se obtiene con problema.heuristica(estado).
+La prioridad en la frontera se calcula como g(n) + h(n) y se maneja con heapq (cola de prioridad).
 
 **f(n) = g(n) + h(n)**
 
@@ -22,8 +26,15 @@ El algoritmo mantiene una cola de prioridad de nodos a explorar, ordenados por s
 
 La ruta encontrada por A* es óptima porque la heurística utilizada (distancia en línea recta) es **admisible** y **consistente**.
 
-- **Admisible:** Como se mencionó, la distancia en línea recta nunca es mayor que la distancia real por carretera. Esto garantiza que A* no se deje engañar por una estimación demasiado optimista que podría llevarlo por un camino incorrecto.
+- **Admisible:** Como se mencionó, la distancia en línea recta nunca es mayor que la distancia real por carretera. Esto garantiza que A* no se deje engañar por una estimación demasiado optimista que podría llevarlo por un camino incorrecto. En base a esto podríamos decir que entonces, la heurística usada es admisible porque las distancias en el diccionario heuristica siempre son menores o iguales que las reales en mapa_rumania.
 - **Consistente (o monotónica):** Para cualquier par de nodos adyacentes `n` y `n'`, el costo estimado desde `n` es menor o igual que el costo de ir de `n` a `n'` más el costo estimado desde `n'`. En un mapa con distancias euclidianas, esto se cumple.
+En otras palabras, lo podemos expresar como: 
+h(n) ≤ costo(n, n') + h(n')
+Por ejemplo, de Sibiu a Fagaras: 
+h(Sibiu) = 253
+costo(Sibiu, Fagaras) = 99
+h(Fagaras) = 176
+253 ≤ 99 + 176  (cumple)
 
 Cuando la heurística es admisible y consistente, se puede demostrar que la primera vez que A* expande el nodo objetivo, ha encontrado la ruta óptima. Esto se debe a que cualquier otro camino hacia el objetivo que aún esté en la frontera tendrá un valor `f(n)` mayor o igual, lo que significa que su costo real `g(n)` ya es mayor o no puede ser mejor que la solución ya encontrada.
 
