@@ -78,3 +78,9 @@ Las diferencias fundamentales entre los dos algoritmos, reflejadas en los result
   - En grafos muy grandes, BFS podría ser más rápido si la solución se encuentra a una profundidad `d` y el factor de ramificación es grande, ya que IDS expandirá múltiples veces los nodos de los niveles superiores. Sin embargo, el costo en memoria de BFS a menudo lo hace impracticable mucho antes de que el tiempo de ejecución de IDS se convierta en un problema.
 
 En resumen, **BFS** es óptimo y completo, pero su requerimiento de memoria es su mayor debilidad. **IDS** ofrece la misma optimalidad y completitud que BFS pero con un costo de memoria mucho menor, lo que lo convierte en una mejor opción para árboles de búsqueda grandes o desconocidos.
+
+## Limitaciones y posibles Mejoras
+En redes más grandes:
+- BFS podría quedarse sin memoria antes de encontrar la solución.
+- IDS mantiene bajo consumo de memoria pero repite expansiones, lo que incrementa el tiempo si la profundidad es alta.
+- Una posible mejora sería implementar Búsqueda Bidireccional para reducir el tiempo de búsqueda en grafos no ponderados.
