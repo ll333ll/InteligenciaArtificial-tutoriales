@@ -1,4 +1,4 @@
-# Proyecto de Inteligencia Artificial – Algoritmos de Búsqueda
+# Inteligencia Artificial – Informes
 
 <br>
 
@@ -15,9 +15,10 @@
 
 ---
 
+# Informe 1 - Algoritmos de Búsqueda
 ## 📌 Descripción General
 
-Este repositorio contiene la implementación y análisis de tres ejercicios prácticos relacionados con algoritmos de búsqueda, desarrollados como parte del **Informe 1** del curso.  
+Esta sección del readme y repositorio contiene la implementación y análisis de tres ejercicios prácticos relacionados con algoritmos de búsqueda, desarrollados como parte del **Informe 1** del curso.  
 En cada ejercicio se incluye:
 
 - Implementación en Python.
