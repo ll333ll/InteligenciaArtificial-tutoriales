@@ -1,7 +1,11 @@
 # Proyecto de Inteligencia Artificial – Algoritmos de Búsqueda
+
 <br>
+
 **Autores:**  
+
 <br>
+
 - Jose Alejandro Jimenez Vasquez  
 - Felipe Castro Jaimes
 - Nicolas Vasquez  
