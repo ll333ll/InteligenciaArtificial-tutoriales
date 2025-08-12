@@ -5,6 +5,11 @@
 ## 1. Solución del Ejercicio
 
 Se ha implementado un algoritmo de búsqueda A* para resolver el problema del laberinto. El código `ejercicio2.py` contiene la solución, donde se define una clase `Problem` para abstraer las características del laberinto y se utiliza A* con la distancia de Manhattan como heurística para encontrar la salida.
+En la implementación (ejercicio2.py), la función principal encontrar_salida usa A* combinando:
+g(n): calculado en nuevo_costo, que suma el costo acumulado con el resultado de funcion_costo.
+h(n): calculado por distancia_manhattan entre el nodo actual y el objetivo.
+f(n) = g(n) + h(n): usado para ordenar la cola de prioridad frontera mediante heapq.
+La clase Nodo almacena posicion, padre, accion y costo_camino, permitiendo reconstruir la ruta óptima con reconstruir_camino.
 
 ## 2. Cambio en la Función de Costo
 
