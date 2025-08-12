@@ -4,8 +4,6 @@
 
 **Autores:**  
 
-<br>
-
 - Jose Alejandro Jimenez Vasquez  
 - Felipe Castro Jaimes
 - Nicolas Vasquez  
