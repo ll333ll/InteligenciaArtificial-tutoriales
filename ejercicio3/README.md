@@ -41,6 +41,7 @@ En el diagrama se observan las 10 estaciones y sus conexiones, lo que permite co
 - **Clase `Nodo`:** Representa un punto en la búsqueda. Almacena el estado (la estación actual) y una referencia a su nodo padre, lo que permite reconstruir la ruta una vez que se alcanza el objetivo.
 - **Clase `Problema`:** Encapsula la definición del problema. Contiene el estado inicial, el estado objetivo y el grafo de la red de metro. Proporciona métodos para obtener las acciones posibles desde un estado (`acciones`), el resultado de una acción (`resultado`) y verificar si un estado es el objetivo (`es_objetivo`).
 - **Acciones:** Las acciones se definen como el movimiento de una estación a otra conectada directamente. La función `problema.acciones(estado)` devuelve la lista de estaciones a las que se puede viajar desde la estación actual.
+- La función `reconstruir_camino` parte del nodo objetivo y recorre los enlaces `padre` hasta llegar al nodo inicial.  El resultado se invierte para mostrar la ruta correcta. Este proceso se utiliza tanto en BFS como en IDS para generar la secuencia de estaciones recorridas.
 
 ## 3. Algoritmos: BFS e IDS
 
