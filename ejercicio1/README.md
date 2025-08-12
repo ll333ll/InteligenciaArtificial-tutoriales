@@ -38,4 +38,9 @@ h(Fagaras) = 176
 
 Cuando la heurística es admisible y consistente, se puede demostrar que la primera vez que A* expande el nodo objetivo, ha encontrado la ruta óptima. Esto se debe a que cualquier otro camino hacia el objetivo que aún esté en la frontera tendrá un valor `f(n)` mayor o igual, lo que significa que su costo real `g(n)` ya es mayor o no puede ser mejor que la solución ya encontrada.
 
+## Evidencia de ejecución:
 La ruta encontrada es: **['Arad', 'Sibiu', 'Rimnicu Vilcea', 'Pitesti', 'Bucharest']** con un costo total de 418.
+
+Complejidad:
+- Temporal: O(E log V) gracias a la cola de prioridad (heapq).
+- Espacial: O(V) para almacenar nodos alcanzados.
