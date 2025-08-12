@@ -6,6 +6,36 @@
 
 El mapa de la red de metro se ha modelado como un grafo no dirigido donde las estaciones son los nodos y las conexiones directas entre ellas son las aristas. Dado que el objetivo es encontrar la ruta con menos paradas, todas las aristas tienen un costo uniforme de 1. La estructura del grafo se ha implementado en Python utilizando un diccionario, donde cada clave es una estación y su valor es una lista de las estaciones a las que está conectada.
 
+El grafo se implementa como un diccionario en Python:
+```python
+mapa_metro = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B', 'G'],
+    'E': ['B', 'H', 'I'],
+    'F': ['C', 'J'],
+    'G': ['D'],
+    'H': ['E'],
+    'I': ['E', 'J'],
+    'J': ['F', 'I']
+}
+```
+Representandolo visualmente:
+```mathematica
+    A
+   / \
+  B   C
+ / \   \
+D   E   F
+|  / \   \
+G H   I   J
+     /   /
+    J   I
+```
+
+En el diagrama se observan las 10 estaciones y sus conexiones, lo que permite comprender la estructura del grafo antes de aplicar los algoritmos BFS e ID.
+
 ## 2. Implementación de Clases y Acciones
 
 - **Clase `Nodo`:** Representa un punto en la búsqueda. Almacena el estado (la estación actual) y una referencia a su nodo padre, lo que permite reconstruir la ruta una vez que se alcanza el objetivo.
